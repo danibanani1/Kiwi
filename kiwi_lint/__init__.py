@@ -12,6 +12,7 @@ from .bulk_create import BulkCreateChecker
 from .objects_update import ObjectsUpdateChecker
 from .tags import TagsChecker
 from .empty_module import EmptyModuleChecker
+from .empty_module import ModuleInDirectoryWithoutInitChecker
 from .nested_definition import NestedDefinitionChecker
 from .missing_permissions import MissingPermissionsChecker
 
@@ -26,5 +27,6 @@ def register(linter):
     linter.register_checker(ObjectsUpdateChecker(linter))
     linter.register_checker(TagsChecker(linter))
     linter.register_checker(EmptyModuleChecker(linter))
+    linter.register_checker(ModuleInDirectoryWithoutInitChecker(linter))
     linter.register_checker(NestedDefinitionChecker(linter))
     linter.register_checker(MissingPermissionsChecker(linter))
